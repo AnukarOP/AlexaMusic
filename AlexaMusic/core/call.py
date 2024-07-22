@@ -10,7 +10,7 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardMarkup, ChatMemberUpdated
 from pytgcalls import PyTgCalls
-from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall, TelegramServerError
+from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall
 from pytgcalls.types import (
     JoinedGroupCallParticipant,
     LeftGroupCallParticipant,
@@ -41,9 +41,7 @@ from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.thumbnails import gen_thumb
 from AlexaMusic.utils.theme import check_theme
-from strings import get_string
-
-# Rest of your code remains unchanged...
+from strings import get_strin
 
 autoend = {}
 counter = {}
