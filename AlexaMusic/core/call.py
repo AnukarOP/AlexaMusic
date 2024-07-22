@@ -29,20 +29,18 @@ from typing import Union
 from pyrogram import Client
 from pyrogram.errors import (
     ChatAdminRequired,
-    UpdatedGroupCallParticipant,
     UserNotParticipant,
+    UserAlreadyParticipant
 )
-from pyrogram.types import InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardMarkup, ChatMemberStatus
 from pytgcalls import PyTgCalls
-from ntgcalls import TelegramServerError
-from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall
+from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall, TelegramServerError
 from pytgcalls.types import (
     JoinedGroupCallParticipant,
     LeftGroupCallParticipant,
-    MediaStream,
-    Update,
+    Update
 )
-from pytgcalls.types.stream import StreamAudioEnded
+from pytgcalls.types.stream import MediaStream, StreamAudioEnded
 
 import config
 from AlexaMusic import LOGGER, YouTube, app
@@ -60,7 +58,7 @@ from AlexaMusic.utils.database import (
     music_on,
     remove_active_chat,
     remove_active_video_chat,
-    set_loop,
+    set_loop
 )
 from AlexaMusic.utils.exceptions import AssistantErr
 from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
