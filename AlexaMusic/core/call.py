@@ -29,7 +29,7 @@ from typing import Union
 from pyrogram import Client
 from pyrogram.errors import (
     ChatAdminRequired,
-    UserAlreadyParticipant,
+    UpdatedGroupCallParticipant,
     UserNotParticipant,
 )
 from pyrogram.types import InlineKeyboardMarkup
