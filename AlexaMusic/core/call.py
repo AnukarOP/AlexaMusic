@@ -1,27 +1,3 @@
-# Copyright (C) 2024 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
-
-""""
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
-
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
-"""
-
-
-# Copyright (C) 2024 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
-
-""""
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
-
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
-"""
-
-
 import asyncio
 from datetime import datetime, timedelta
 from typing import Union
@@ -32,7 +8,7 @@ from pyrogram.errors import (
     UserNotParticipant,
     UserAlreadyParticipant
 )
-from pyrogram.types import InlineKeyboardMarkup, ChatMemberStatus
+from pyrogram.types import InlineKeyboardMarkup, ChatMemberUpdated
 from pytgcalls import PyTgCalls
 from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall, TelegramServerError
 from pytgcalls.types import (
@@ -66,6 +42,8 @@ from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.thumbnails import gen_thumb
 from AlexaMusic.utils.theme import check_theme
 from strings import get_string
+
+# Rest of your code remains unchanged...
 
 autoend = {}
 counter = {}
@@ -227,8 +205,8 @@ class Call(PyTgCalls):
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
             if (
-                get.status == ChatMemberStatus.BANNED
-                or get.status == ChatMemberStatus.RESTRICTED
+                get.status == ChatMemberUpdated.KICKED
+                or get.status == ChatMemberUpdated.RESTRICTED
             ):
                 try:
                     await app.unban_chat_member(chat_id, userbot.id)
